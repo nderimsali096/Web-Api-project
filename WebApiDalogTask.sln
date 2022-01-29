@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiDalogTask.Data", "WebApiDalogTask.Data\WebApiDalogTask.Data.csproj", "{37268935-8FC8-4DE8-B8A6-AE7AC591C118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiDalogTask.Services", "WebApiDalogTask.Services\WebApiDalogTask.Services.csproj", "{4EA300B3-2C95-478D-B08B-5A312D9A5D30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiDalogTask.Test", "WebApiDalogTask.Test\WebApiDalogTask.Test.csproj", "{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiDalogTask.Web", "WebApiDalogTask.Web\WebApiDalogTask.Web.csproj", "{AA4482B5-3EEE-4ABA-BA8E-DFC1F38222A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37268935-8FC8-4DE8-B8A6-AE7AC591C118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37268935-8FC8-4DE8-B8A6-AE7AC591C118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37268935-8FC8-4DE8-B8A6-AE7AC591C118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37268935-8FC8-4DE8-B8A6-AE7AC591C118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA4482B5-3EEE-4ABA-BA8E-DFC1F38222A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA4482B5-3EEE-4ABA-BA8E-DFC1F38222A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA4482B5-3EEE-4ABA-BA8E-DFC1F38222A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA4482B5-3EEE-4ABA-BA8E-DFC1F38222A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
