@@ -12,11 +12,9 @@ namespace WebApiDalogTask.Data.Models
         public String Email { get; set; }
         public int CompanyId { get; set; }
 
-        [Required]
         public Company Company { get; set; }
 
         public Team Team { get; set; }
-        public int TeamId { get; set; }
 
         public ICollection<TeamMembership> TeamMemberships { get; set; }
 

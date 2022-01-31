@@ -14,5 +14,6 @@ namespace WebApiDalogTask.Data.Models
         public ICollection<Project> projects { get; set; }
 
         public User User { get; set; }
+        public int UserId { get; set; }
     }
 }

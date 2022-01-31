@@ -9,8 +9,6 @@ namespace WebApiDalogTask.Data.Models
     {
         public int Id { get; set; }
         public int TeamId { get; set; }
-
-        [Required]
         public Team Team { get; set; }
 
         public User User { get; set; }

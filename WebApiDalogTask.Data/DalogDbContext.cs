@@ -30,7 +30,7 @@ namespace WebApiDalogTask.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=localhost;database=taskapi;trusted_connection=true;");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Username=taskdev;Password=taskapi123;Database=taskapi;");
         }
 
     }
