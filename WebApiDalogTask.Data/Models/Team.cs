@@ -10,10 +10,6 @@ namespace WebApiDalogTask.Data.Models
         public String Name { get; set; }
         public int TeamLeaderUserId { get; set; }
         public  ICollection<TeamMembership> TeamMemberships { get; set; }
-
         public ICollection<Project> Projects { get; set; }
-
-        public User User { get; set; }
-        public int UserId { get; set; }
     }
 }
