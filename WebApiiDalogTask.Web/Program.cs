@@ -20,7 +20,7 @@ namespace WebApiiDalogTask.Web
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseIISIntegration().UseStartup<Startup>();
                 });
     }
 }

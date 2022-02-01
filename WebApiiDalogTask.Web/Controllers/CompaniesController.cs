@@ -28,6 +28,7 @@ namespace WebApiiDalogTask.Web.Controllers
             return await _context.Companies.ToListAsync();
         }
 
+
         // GET: api/Companies/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Company>> GetCompany(int id)
