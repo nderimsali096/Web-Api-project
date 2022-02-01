@@ -30,74 +30,57 @@ namespace WebApiiDalogTask.Web.Controllers
 
         // GET: api/ProjectActivities/Project/1
         [HttpGet("Project/{id}")]
-        public async Task<ActionResult<IEnumerable<ProjectActivity>>> GetProjectActivitiesByProject(int id)
+        public async Task<ActionResult<IEnumerable<ProjectActivity>>> GetProjectActivitiesByProject(int projectId)
         {
-            var result = new List<ProjectActivity>();
+            var result = new List<List<ProjectActivity>>();
             try
             {
-                var projectAreas = await _context.ProjectAreas.ToListAsync();
-                var projectActivities = await _context.ProjectActivities.ToListAsync();
-                foreach(var item in projectAreas)
+                // project areas for the specified project
+                var projectAreas = await _context.ProjectAreas.Where(x => x.ProjectId == projectId).ToListAsync();
+                foreach (var area in projectAreas)
                 {
-                    if (item.ProjectId == id)
-                    {
-                        foreach(var activity in projectActivities)
-                        {
-                            if (activity.ProjectAreaId == item.Id)
-                            {
-                                result.Add(activity);
-                            }
-                        }
-                    }
+                    var currentActivitesForArea = await _context.ProjectActivities.Where(x => x.ProjectAreaId == area.Id).ToListAsync();
+                    result.Add(currentActivitesForArea);  
                 }
             } catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
-            return result;
+            return result.SelectMany(x => x).ToList();
         }
 
         // GET: api/ProjectActivities/User/Project/1/1
         [HttpGet("User/Project/{userId}/{projectId}")]
         public async Task<ActionResult<IEnumerable<ProjectActivity>>> GetProjectActivitiesByUserAndProject(int userId, int projectId)
-        {             
+        {
+            var projectActivitiesByProject = new List<List<ProjectActivity>>();
+            var projectActivities = new List<ProjectActivity>();
+            var projectActivitiesResult = new List<ProjectActivity>();
             try
             {
-                var projectAreas = await _context.ProjectAreas.ToListAsync();
-                var projectActivities = await _context.ProjectActivities.ToListAsync();
-                var teamMemberships = await _context.TeamMemberships.ToListAsync();
-                foreach(var item in projectAreas)
+                var projectAreas = await _context.ProjectAreas.Where(x => x.ProjectId == projectId).ToListAsync();
+                var teamMemberships = await _context.TeamMemberships.Where(x => x.UserId == userId).ToListAsync();
+                foreach (var area in projectAreas)
                 {
-                    if (item.ProjectId == projectId)
-                    {
-                        foreach(var activity in projectActivities)
-                        {
-                            if (activity.ProjectAreaId == item.Id)
-                            {
-                                projectActivitiesByProject.Add(activity);
-                            }
-                        }
-                    }
+                    var currentActivitesForArea = await _context.ProjectActivities.Where(x => x.ProjectAreaId == area.Id).ToListAsync();
+                    projectActivitiesByProject.Add(currentActivitesForArea);  
                 }
-                
+                projectActivities = projectActivitiesByProject.SelectMany(x => x).ToList();
                 foreach(var teamMembership in teamMemberships)
                 {
-                    if (teamMembership.UserId == userId)
-                    {
-                        foreach (var activity in projectActivitiesByProject)
-                        {
-                            if (activity.TeamMembershipId == teamMembership.Id)
-                            {
-                                projectActivitiesResult.Add(activity);
-                            }
-                        }
-                    }
+                   foreach (var activity in projectActivities)
+                   {
+                      if (activity.TeamMembershipId == teamMembership.Id)
+                      {
+                          projectActivitiesResult.Add(activity);
+                      }
+                   }
                 }
             } catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
-            return projectActivitiesByProject;
+            return projectActivitiesResult;
         }
 
         // GET: api/ProjectActivities/5

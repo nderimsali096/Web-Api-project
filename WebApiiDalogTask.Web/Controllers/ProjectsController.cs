@@ -30,10 +30,10 @@ namespace WebApiiDalogTask.Web.Controllers
 
         // GET: api/Projects/Team/1
         [HttpGet("Team/{id}")]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsByTeam(int id)
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsByTeam(int teamId)
         {
             var projects = await _context.Projects.ToListAsync();
-            var specifiedTeamProjects = projects.FindAll(project => project.TeamId == id);
+            var specifiedTeamProjects = projects.FindAll(project => project.TeamId == teamId);
             return specifiedTeamProjects;
         }
 
