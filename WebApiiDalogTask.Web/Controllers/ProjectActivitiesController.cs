@@ -57,6 +57,49 @@ namespace WebApiiDalogTask.Web.Controllers
             return result;
         }
 
+        // GET: api/ProjectActivities/User/Project/1/1
+        [HttpGet("User/Project/{userId}/{projectId}")]
+        public async Task<ActionResult<IEnumerable<ProjectActivity>>> GetProjectActivitiesByUserAndProject(int userId, int projectId)
+        {             
+            try
+            {
+                var projectAreas = await _context.ProjectAreas.ToListAsync();
+                var projectActivities = await _context.ProjectActivities.ToListAsync();
+                var teamMemberships = await _context.TeamMemberships.ToListAsync();
+                foreach(var item in projectAreas)
+                {
+                    if (item.ProjectId == projectId)
+                    {
+                        foreach(var activity in projectActivities)
+                        {
+                            if (activity.ProjectAreaId == item.Id)
+                            {
+                                projectActivitiesByProject.Add(activity);
+                            }
+                        }
+                    }
+                }
+                
+                foreach(var teamMembership in teamMemberships)
+                {
+                    if (teamMembership.UserId == userId)
+                    {
+                        foreach (var activity in projectActivitiesByProject)
+                        {
+                            if (activity.TeamMembershipId == teamMembership.Id)
+                            {
+                                projectActivitiesResult.Add(activity);
+                            }
+                        }
+                    }
+                }
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return projectActivitiesByProject;
+        }
+
         // GET: api/ProjectActivities/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ProjectActivity>> GetProjectActivity(int id)
