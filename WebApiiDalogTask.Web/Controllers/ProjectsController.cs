@@ -28,7 +28,7 @@ namespace WebApiiDalogTask.Web.Controllers
             return await _context.Projects.ToListAsync();
         }
 
-        // GET: api/Projects
+        // GET: api/Projects/Team/1
         [HttpGet("Team/{id}")]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjectsByTeam(int id)
         {

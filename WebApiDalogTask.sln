@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiDalogTask.Data", "WebApiDalogTask.Data\WebApiDalogTask.Data.csproj", "{37268935-8FC8-4DE8-B8A6-AE7AC591C118}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiDalogTask.Services", "WebApiDalogTask.Services\WebApiDalogTask.Services.csproj", "{4EA300B3-2C95-478D-B08B-5A312D9A5D30}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiDalogTask.Test", "WebApiDalogTask.Test\WebApiDalogTask.Test.csproj", "{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiiDalogTask.Web", "WebApiiDalogTask.Web\WebApiiDalogTask.Web.csproj", "{51C71FB9-9D85-483B-BCF3-4735CB4276A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiiDalogTask.Web", "WebApiiDalogTask.Web\WebApiiDalogTask.Web.csproj", "{51C71FB9-9D85-483B-BCF3-4735CB4276A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		{37268935-8FC8-4DE8-B8A6-AE7AC591C118}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37268935-8FC8-4DE8-B8A6-AE7AC591C118}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37268935-8FC8-4DE8-B8A6-AE7AC591C118}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EA300B3-2C95-478D-B08B-5A312D9A5D30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20F85771-A92A-44FF-9EA7-9BB0CD4BD448}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApiDalogTask.Data;
+using Newtonsoft;
+using System.Text.Json;
 
 namespace WebApiiDalogTask.Web
 {
@@ -28,10 +30,13 @@ namespace WebApiiDalogTask.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson
+                (options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<DalogDbContext>(opts => {
                 opts.EnableDetailedErrors();
                 opts.UseNpgsql(Configuration.GetConnectionString("task-dalog.dev"));
             });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -28,6 +28,35 @@ namespace WebApiiDalogTask.Web.Controllers
             return await _context.ProjectActivities.ToListAsync();
         }
 
+        // GET: api/ProjectActivities/Project/1
+        [HttpGet("Project/{id}")]
+        public async Task<ActionResult<IEnumerable<ProjectActivity>>> GetProjectActivitiesByProject(int id)
+        {
+            var result = new List<ProjectActivity>();
+            try
+            {
+                var projectAreas = await _context.ProjectAreas.ToListAsync();
+                var projectActivities = await _context.ProjectActivities.ToListAsync();
+                foreach(var item in projectAreas)
+                {
+                    if (item.ProjectId == id)
+                    {
+                        foreach(var activity in projectActivities)
+                        {
+                            if (activity.ProjectAreaId == item.Id)
+                            {
+                                result.Add(activity);
+                            }
+                        }
+                    }
+                }
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return result;
+        }
+
         // GET: api/ProjectActivities/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ProjectActivity>> GetProjectActivity(int id)
