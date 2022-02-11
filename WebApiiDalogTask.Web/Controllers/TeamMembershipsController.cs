@@ -43,7 +43,6 @@ namespace WebApiiDalogTask.Web.Controllers
         }
 
         // PUT: api/TeamMemberships/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTeamMembership(int id, TeamMembership teamMembership)
         {
@@ -74,7 +73,6 @@ namespace WebApiiDalogTask.Web.Controllers
         }
 
         // POST: api/TeamMemberships
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TeamMembership>> PostTeamMembership(TeamMembership teamMembership)
         {
