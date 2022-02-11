@@ -4,6 +4,7 @@
   - Entity Framework Core 6.0
   - EntityFrameworkCore.SqlServer
   - Swashbuckle.AspNetCore 5.6
+
 Referenced [Microsoft](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-6.0) REST API best practice.
 
 # Installation
