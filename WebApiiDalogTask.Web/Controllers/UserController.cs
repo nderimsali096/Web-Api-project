@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiDalogTask.Data;
 using WebApiDalogTask.Data.Models;
 
-namespace WebApiiDalogTask.Web.Controllers
+namespace WebApiProject.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -43,7 +42,6 @@ namespace WebApiiDalogTask.Web.Controllers
         }
 
         // PUT: api/User/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
@@ -74,7 +72,6 @@ namespace WebApiiDalogTask.Web.Controllers
         }
 
         // POST: api/User
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
