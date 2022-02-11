@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebApiDalogTask.Data\WebApiDalogTask.Data.csproj" />
-    <ProjectReference Include="..\WebApiDalogTask.Test\WebApiDalogTask.Test.csproj" />
+    <ProjectReference Include="..\WebApiDalogTask.Data\WebApiProject.Data.csproj" />
+    <ProjectReference Include="..\WebApiDalogTask.Test\WebApiProject.Test.csproj" />
   </ItemGroup>
 
 
