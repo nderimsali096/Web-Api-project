@@ -87,6 +87,7 @@ namespace WebApiiDalogTask.Web.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCompany(int id)
         {
+            // do a change here
             var company = await _context.Companies.FindAsync(id);
             if (company == null)
             {
